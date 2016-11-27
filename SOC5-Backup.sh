@@ -1,6 +1,6 @@
 #!/bin/bash
 # wvera@suse.com
-# Backup SOC5: Crowbar (admin), DB and proposals.
+# Backup SOC5: Crowbar (admin), DB, proposals and cookbooks path.
 
 BackupPath="SOC-BACKUPS"
 BackupDate="$(date +%m-%d-%Y-%H%M)"
