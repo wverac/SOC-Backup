@@ -7,11 +7,11 @@
 SOCController="controller1"
 BackupPath="SOC-BACKUPS"
 BackupDate="$(date +%m-%d-%Y-%H%M)"
-SOCVersion="$(zypper se -i -t product | awk '/cloud/ {print}' | cut -d"|" -f3 | sed "s/ //g")"
 
 mkdir -p ${BackupPath}/${BackupDate}
 
 # Trying to determine which SOC version is installed
+SOCVersion="$(zypper se -i -t product | awk '/cloud/ {print}' | cut -d"|" -f3 | sed "s/ //g")"
 if [ "$(echo "${SOCVersion: -1}")" -eq "5" ];then
      echo "Backing up \"SUSE OpenStack Cloud 5\""
      # Dirty way to invoke crowbar-backup in non-interactive mode
@@ -25,7 +25,7 @@ if [ "$(echo "${SOCVersion: -1}")" -eq "5" ];then
      echo "No SOC installations found"
 fi
 
-# Exporting porposals in YAML file
+# Exporting proposals in YAML file
 /usr/bin/crowbar batch export > ${BackupPath}/${BackupDate}/Crowbar-proposals-export-${BackupDate}.yaml
 
 # DB Backup, the correct way, according with the official documentation:
