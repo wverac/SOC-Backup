@@ -1,6 +1,6 @@
 #!/bin/bash
 # wvera@suse.com
-# Simple, rustic and graceless cript to backup SUSE OpenStack Cloud (SOC)
+# Simple, rustic and graceless script to backup SUSE OpenStack Cloud (SOC)
 # Tested in SOC5 and SOC6
 
 # Define vars
