@@ -30,7 +30,7 @@ fi
 
 # DB Backup, the correct way, according with the official documentation:
 # https://www.postgresql.org/docs/9.6/static/backup-dump.html
-ssh $SOCController "sudo -i -u postgres  pg_dumpall > SOC-DB-backup-${BackupDate}".sql
+ssh $SOCController "sudo -i -u postgres  pg_dumpall > SOC-DB-backup-${BackupDate}.sql"
 scp $SOCController:/root/SOC-DB-backup-${BackupDate}.sql ${BackupPath}/${BackupDate}/
 ssh $SOCController "rm /root/SOC-DB-backup-${BackupDate}.sql"
 
